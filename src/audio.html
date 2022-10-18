@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video & Audio Streaming platforom</title>
-    <script src="/src/scripts/preloadscripts.js"></script>
+    <script src="./scripts/preloadScripts.js"></script>
     <link href="./css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
 
 </head>
+
 <body class="dark:bg-black">
     <nav
         class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900  w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
@@ -20,13 +21,15 @@
                     class="mr-3 h-9 sm:h-9" alt="Flowbite Logo">
             </a>
             <div class="flex md:order-2 gap-1">
-                <a type="button" href="./audio.html"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Listen</a>
-                <a type="button" href="./video.html"
-                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Watch
-                    Now</a>
+                <a type="button"
+                    class="gradient-border py-2.5 px-5 mr-2 text-sm font-medium text-gray-900  bg-white  hover:bg-gray-100 hover:text-blue-700   dark:bg-gray-800 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700">Listen</a>
+
+                <button type="button"
+                    class="py-2.5 px-5 mr-2 text-sm font-medium text-gray-900 focus:outline-none bg-white  border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Watch
+                    Now</button>
+
                 <button data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    class="inline-flex items-center p-2 text-sm text-gray-500  md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                     aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -36,19 +39,7 @@
                             clip-rule="evenodd"></path>
                     </svg>
                 </button>
-                <button id="theme-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-                    </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
+
             </div>
             <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
@@ -75,12 +66,116 @@
             </div>
         </div>
     </nav>
-    <main class="mx-auto max-w-lg">
-        <button id="playbtn">▶️</button>
-        <progress type="range" value="0" min="0" max="100" step="1"></progress>
+    <main class="container mx-auto">
+        
+        <div class="flex min-h-screen w-full items-center justify-center">
+            <h1 class="dark:text-white">Play Onine</h1>
+            <!-- new card -->
+            <article class="group relative flex h-[12rem] w-[50rem] overflow-hidden bg-[#3a4448]">
+                <!-- image (left side) -->
+                <div class="absolute inset-y-0 left-0 w-48">
+                    <img src="./images/nrgplayer.jpg" alt=""
+                        class="h-full w-full object-cover object-center opacity-95" />
 
+                    <div
+                        class="invisible absolute inset-0 flex h-full w-full items-center justify-center bg-[#0c0c0c]/70 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                        <button class="h-w-28 w-28 text-3xl cursor-pointer text-white transition-all duration-200 hover:text-yellow-400" id="playbtn">▶️</button>
+                    </div>
+                </div>
+
+                <!-- right side -->
+                <div
+                    class="absolute inset-y-0 left-44 w-[39rem] overflow-hidden transition-all duration-200">
+                    <!-- background image -->
+                    <div style="background-image: url('./images/nrgplayer.jpg')"
+                        class="h-full w-full bg-cover bg-center">
+                        <div
+                            class="h-full w-full bg-[#455055]/80 transition-all duration-200 group-hover:bg-[#31383b]/80">
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <section class="absolute inset-0 flex flex-col justify-between p-4 text-white">
+                        <header class="space-y-1">
+                            <div class="text-3xl font-medium">NRG Radio</div>
+                            <div class="font-medium">
+                                Now Playing Bruno Mars, Anderson .Paak, Silk Sonic
+                            </div>
+                           
+                        </header>
+
+                        <div
+                            class="invisible flex space-x-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                            <span class="flex items-center space-x-1">
+                                <!-- liked icon -->
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                    </path>
+                                </svg>
+                                <div>33</div>
+                            </span>
+
+                            <!-- played icon -->
+                            <span class="flex items-center space-x-1">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div>75.7k</div>
+                            </span>
+
+                            <!-- verified icon -->
+                            <span class="flex items-center space-x-1">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <div id="date">25 Mar 2022</div>
+                            </span>
+                        </div>
+
+                        <div class="flex flex-row space-x-2">
+                            <span id="audiostatus" class="bg-[#86ff5f] px-2 font-medium text-stone-900 basis-1/5">Not Playing</span>
+                            <div class="flex items-center space-x-1 basis-4/5">
+                                <progress class="bg-blue-600 h-2.5 w-full " type="range" value="0" min="0" max="100" step="1"></progress>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </div>
+
+        <audio
+        controls
+        src="https://uksouth.streaming.broadcast.radio/nrg">
+            
+    </audio>
     </main>
+    <footer>
+
+    </footer>
+    <button id="theme-toggle" type="button"
+        class="fixed bottom-2 right-3 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+        </svg>
+        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+    </button>
 </body>
 <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
 <script src="./scripts/scripts.js"></script>
+
 </html>

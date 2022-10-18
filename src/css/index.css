@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --border-width: 3px;
+}
 
 @-webkit-keyframes spinner-border {
     to {
@@ -74,4 +77,132 @@
       -webkit-animation-duration: 1.5s;
               animation-duration: 1.5s;
     }
+  }
+
+  .gradient-border {
+    --border-width: 3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    border-radius: var(--border-width);
+  }
+  .gradient-border::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(60deg, #5f86f2, #a65ff2, #f25fd0, #f25f61, #f2cb5f, #abf25f, #5ff281, #5ff2f0);
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* video */
+ 
+  
+  p {
+    position: absolute;
+    top: 310px;
+  }
+  
+
+  
+  .controls {
+    visibility: hidden;
+    opacity: 0.5;
+    /* position: absolute;
+    bottom: 20px;
+    left: 50%; */
+    /* margin-left: -200px; */
+    background-color: black;
+    box-shadow: 3px 3px 5px black;
+    transition: 1s all;
+    display: flex;
+  }
+  
+  button, .controls {
+    background: linear-gradient(to bottom,#222,#666);
+  }
+  
+  .player:hover .controls, .player:focus .controls {
+    opacity: 1;
+  }
+  
+  button:before {
+    font-family: HeydingsControlsRegular;
+    font-size: 20px;
+    position: relative;
+    content: attr(data-icon);
+    color: #aaa;
+    text-shadow: 1px 1px 0px black;
+  }
+  
+  .play:before {
+    font-size: 22px;
+  }
+  
+  
+  button, .timer {
+    height: 38px;
+    line-height: 19px;
+    box-shadow: inset 0 -5px 25px rgba(0,0,0,0.3);
+    border-right: 1px solid #333;
+  }
+  
+  button {
+    position: relative;
+    border: 0;
+    flex: 1;
+    outline: none;
+  }
+  
+  
+  .timer {
+    line-height: 38px;
+    font-size: 10px;
+    font-family: monospace;
+    text-shadow: 1px 1px 0px black;
+    color: white;
+    flex: 5;
+    position: relative;
+  }
+  
+  .timer div {
+    position: absolute;
+    background-color: rgba(255,255,255,0.2);
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 38px;
+    z-index: 2;
+  }
+  
+  .timer span {
+    position: absolute;
+    z-index: 3;
+    left: 19px;
+  }
+  
+  button:hover,button:focus {
+    box-shadow: inset 1px 1px 2px black;
+  }
+  
+  button:active {
+    box-shadow: inset 3px 3px 2px black;
+  }
+  
+  .active:before {
+    color: red;
   }
