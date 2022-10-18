@@ -70,98 +70,19 @@
         
         <div class="flex min-h-screen w-full items-center justify-center">
             
-            <!-- new card -->
-            <article class="group relative flex h-[12rem] w-[50rem] overflow-hidden bg-[#3a4448]">
-                <!-- image (left side) -->
-                <div class="absolute inset-y-0 left-0 w-48">
-                    <img src="./images/nrgplayer.jpg" alt=""
-                        class="h-full w-full object-cover object-center opacity-95" />
-
-                    <div
-                        class="invisible absolute inset-0 flex h-full w-full items-center justify-center bg-[#0c0c0c]/70 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                        <button class="h-w-28 w-28 text-3xl cursor-pointer text-white transition-all duration-200 hover:text-yellow-400" id="playbtn">▶️</button>
-                    </div>
-                </div>
-
-                <!-- right side -->
-                <div
-                    class="absolute inset-y-0 left-44 w-[39rem] overflow-hidden transition-all duration-200">
-                    <!-- background image -->
-                    <div style="background-image: url('./images/nrgplayer.jpg')"
-                        class="h-full w-full bg-cover bg-center">
-                        <div
-                            class="h-full w-full bg-[#455055]/80 transition-all duration-200 group-hover:bg-[#31383b]/80">
-                        </div>
-                    </div>
-
-                    <!-- content -->
-                    <section class="absolute inset-0 flex flex-col justify-between p-4 text-white">
-                        <header class="space-y-1">
-                            <div class="text-3xl font-medium">NRG Radio</div>
-                            <div class="font-medium">
-                                Now Playing Bruno Mars, Anderson .Paak, Silk Sonic
-                            </div>
-                           
-                        </header>
-
-                        <div
-                            class="invisible flex space-x-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                            <span class="flex items-center space-x-1">
-                                <!-- liked icon -->
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                                    </path>
-                                </svg>
-                                <div>33</div>
-                            </span>
-
-                            <!-- played icon -->
-                            <span class="flex items-center space-x-1">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
-                                    </path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <div>75.7k</div>
-                            </span>
-
-                            <!-- verified icon -->
-                            <span class="flex items-center space-x-1">
-                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <div id="date">25 Mar 2022</div>
-                            </span>
-                        </div>
-
-                        <div class="flex flex-row space-x-2">
-                            <span id="audiostatus" class="bg-[#86ff5f] px-2 font-medium text-stone-900 basis-1/5">Not Playing</span>
-                            <div class="flex items-center space-x-1 basis-4/5">
-                                <progress class="bg-blue-600 h-2.5 w-full " type="range" value="0" min="0" max="100" step="1"></progress>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </article>
+            <button type="button" id="play">PLAY NOW</button>
+            <div id="content">
+              <img src="./images/the-circle.png" id="show-img" alt="show image" />
+              <canvas id="canvas"></canvas>
+              <audio id="audio" controls></audio>
+            </div>
         </div>
 
-        <audio
-        controls
-        src="https://uksouth.streaming.broadcast.radio/nrg">
-            
-    </audio>
     </main>
     <footer>
 
     </footer>
-    <button id="theme-toggle" type="button"
+    <button type="button" id="theme-toggle" type="button"
         class="fixed bottom-2 right-3 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg">

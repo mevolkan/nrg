@@ -1061,6 +1061,64 @@ button:active {
   color: red;
 }
 
+* {
+  margin: 0;
+}
+
+#content {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+#show-img {
+  z-index: 9999999;
+  height: 50%;
+  width: auto;
+  margin-top: 100px;
+}
+
+#play {
+  z-index: 99999999;
+  background: #fff;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  margin-top: 20px;
+  padding: 20px 40px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#play:hover {
+  cursor: pointer;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+audio {
+  width: calc(50% - 20px);
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, 30%);
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));

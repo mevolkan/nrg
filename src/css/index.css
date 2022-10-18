@@ -216,3 +216,63 @@
   .active:before {
     color: red;
   }
+
+
+  * {
+    margin: 0px;
+  }
+  
+  #content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+  }
+  
+  #show-img {
+    z-index: 9999999;
+    height: 50%;
+    width: auto;
+    margin-top: 100px;
+  }
+  
+  #play {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 50px;
+    border: none;
+    z-index: 99999999;
+    margin-top: 20px;
+    outline: none;
+  }
+  
+  #play:hover {
+    cursor: pointer;
+  }
+  
+  #canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+  }
+  
+  audio {
+    position: absolute;
+    left: 50%;
+    bottom: 30%;
+    width: calc(50% - 20px);
+    transform: translate(-50%, 30%);
+  }
+  
