@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'HeydingsControlsRegular';
+    src: url('/src/fonts/heydings_controls-webfont.eot');
+    src: url('/src/fonts/heydings_controls-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/src/fonts/heydings_controls-webfont.woff') format('woff'),
+         url('/src/fonts/heydings_controls-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 :root {
     --border-width: 3px;
 }

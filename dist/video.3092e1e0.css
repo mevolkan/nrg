@@ -877,6 +877,14 @@ img, video {
   transition-timing-function: linear;
 }
 
+@font-face {
+  font-family: HeydingsControlsRegular;
+  src: url("heydings_controls-webfont.913094db.eot");
+  src: url("heydings_controls-webfont.913094db.eot#iefix") format("embedded-opentype"), url("heydings_controls-webfont.3cbf2865.woff") format("woff"), url("heydings_controls-webfont.e0520519.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   --border-width: 3px;
 }
