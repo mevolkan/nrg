@@ -1,7 +1,6 @@
+//variables
+
 //play audio
-
-
-
 window.onload = function () {
 
     let hour = new Date().getHours()
@@ -12,7 +11,7 @@ window.onload = function () {
         './images/the-circle.png',
         './images/default.png',
     ]
-    
+
     var playBtn = document.getElementById('play')
     var audio = document.getElementById('audio')
     var showImg = document.getElementById('show-img')
@@ -68,7 +67,8 @@ window.onload = function () {
         var barWidth = WIDTH / bufferLength
         var barHeight
         var x = 0
-
+        // set canvas color globally
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         function renderFrame() {
             requestAnimationFrame(renderFrame)
 
@@ -76,7 +76,7 @@ window.onload = function () {
 
             analyser.getByteFrequencyData(dataArray)
 
-            ctx.fillStyle = '#fff'
+
             ctx.fillRect(0, 0, WIDTH, HEIGHT)
 
             for (var i = 0; i < bufferLength; i++) {
@@ -124,9 +124,11 @@ themeToggleBtn.addEventListener('click', function () {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         }
 
         // if NOT set via local storage previously
@@ -134,9 +136,11 @@ themeToggleBtn.addEventListener('click', function () {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         } else {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         }
     }
 

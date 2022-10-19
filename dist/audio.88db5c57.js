@@ -1,3 +1,4 @@
+//variables
 //play audio
 window.onload = function() {
     let hour = new Date().getHours();
@@ -39,7 +40,7 @@ window.onload = function() {
         var canvas = document.getElementById("canvas");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        var ctx = canvas.getContext("2d");
+        var ctx1 = canvas.getContext("2d");
         src.connect(analyser);
         analyser.connect(context.destination);
         analyser.fftSize = 512;
@@ -50,19 +51,20 @@ window.onload = function() {
         var barWidth = WIDTH / bufferLength;
         var barHeight;
         var x = 0;
+        // set canvas color globally
+        ctx1.fillStyle = "rgba(255, 0, 0, 0.5)";
         function renderFrame() {
             requestAnimationFrame(renderFrame);
             x = 0;
             analyser.getByteFrequencyData(dataArray);
-            ctx.fillStyle = "#fff";
-            ctx.fillRect(0, 0, WIDTH, HEIGHT);
+            ctx1.fillRect(0, 0, WIDTH, HEIGHT);
             for(var i = 0; i < bufferLength; i++){
                 barHeight = dataArray[i];
                 var r = barHeight + 25 * (i / bufferLength);
                 var g = 255 * (i / bufferLength);
                 var b = 50;
-                ctx.fillStyle = `rgb(${r}, ${g}, ${b})`;
-                ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+                ctx1.fillStyle = `rgb(${r}, ${g}, ${b})`;
+                ctx1.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
                 x += barWidth * 1.5;
             }
         }
@@ -86,16 +88,20 @@ themeToggleBtn.addEventListener("click", function() {
         if (localStorage.getItem("color-theme") === "light") {
             document.documentElement.classList.add("dark");
             localStorage.setItem("color-theme", "dark");
+            ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
         } else {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("color-theme", "light");
+            ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
         }
     } else if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("color-theme", "light");
+        ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
     } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("color-theme", "dark");
+        ctx.fillStyle = "rgba(255, 0, 0, 0.5)";
     }
 });
 
