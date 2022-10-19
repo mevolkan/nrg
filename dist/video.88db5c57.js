@@ -15,10 +15,7 @@ window.onload = function() {
     else if (hour >= 11 && hour < 14) showImg.src = schedule[1];
     else if (hour >= 15 && hour < 19) showImg.src = schedule[2];
     else if (hour >= 20 && hour <= 23) showImg.src = schedule[3];
-    else {
-        showImg.src = schedule[4];
-        console.log(schedule[4]);
-    }
+    else showImg.src = schedule[4];
     audio.crossOrigin = "anonymous";
     playBtn.addEventListener("click", ()=>{
         audio.paused ? audio.play() : audio.pause();
