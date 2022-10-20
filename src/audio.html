@@ -2,6 +2,15 @@
 <html lang="en">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F335LX54VG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F335LX54VG');
+</script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +31,12 @@
             </a>
             <div class="flex md:order-2 gap-1">
                 <a href="./audio.html" type="button"
-                    class="text-[#dd0e34] hover:text-white border border-gray-800 hover:bg-[#dd0e34] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-[#dd0e34] dark:focus:ring-white">Listen</a>
+                    class="draw-border text-[#dd0e34] hover:text-white border border-gray-800 hover:bg-[#dd0e34] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-[#dd0e34] dark:focus:ring-white">
+                    <span>Listen</span>
+                </a>
                 <a href="./video.html" type="button"
-                    class="text-[#dd0e34] hover:text-white border border-gray-800 hover:bg-[#dd0e34] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-[#dd0e34] dark:focus:ring-white">Watch
-                    Now</a>
+                    class="draw-border text-[#dd0e34] hover:text-white border border-gray-800 hover:bg-[#dd0e34] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-[#dd0e34] dark:focus:ring-white">
+                <span>Watch Now</span></a>
 
                 <button data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 text-sm text-gray-500  md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-black dark:focus:ring-gray-600"
@@ -66,8 +77,8 @@
     </nav>
     <main class="">
         <div class="marquee flex flex-row">
-            <img alt="listen live" src="./images/nrg live.png">
-            <img alt="listen live" src="./images/frequencies.png">
+            <img class="firstimage" alt="listen live" src="./images/nrg live.png">
+            <img class="secondimage" alt="listen live" src="./images/frequencies.png">
         </div>
         <button type="button" id="play"
             class="text-[#dd0e34] hover:text-white border border-gray-800 hover:bg-[#dd0e34] focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-[#dd0e34] dark:focus:ring-gray-800">Play</button>
