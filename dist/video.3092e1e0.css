@@ -318,6 +318,10 @@ img, video {
   left: 50%;
 }
 
+.bottom-0 {
+  bottom: 0;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -429,6 +433,10 @@ img, video {
 
 .h-4 {
   height: 1rem;
+}
+
+.h-screen {
+  height: 100vh;
 }
 
 .min-h-screen {
