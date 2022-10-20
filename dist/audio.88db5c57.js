@@ -1,5 +1,5 @@
 //variables
-//play audio
+if (document.getElementById("audiopage")) //play audio
 window.onload = function() {
     let hour = new Date().getHours();
     const schedule = [

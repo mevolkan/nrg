@@ -1,5 +1,5 @@
 //variables
-
+ if (document.getElementById('audiopage')){
 //play audio
 window.onload = function () {
 
@@ -97,6 +97,8 @@ window.onload = function () {
         renderFrame()
     });
 }
+
+ }
 
 
 
