@@ -829,6 +829,14 @@ nav li {
   font-family: Khand SemiBold;
 }
 
+nav a[type="button"]:first-child {
+  background-color: red;
+}
+
+nav a[type="button"]:nth-child(2) {
+  background-color: #00f;
+}
+
 nav a[type="button"]:first-child span {
   cursor: pointer;
   transition: all .5s;

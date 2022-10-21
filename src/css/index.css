@@ -63,11 +63,18 @@ body, html {
 nav li{
   font-family: 'Khand SemiBold';
 }
+nav a[type=button]:first-child{
+  background-color: red;
+}
+nav a[type=button]:nth-child(2){
+  background-color: blue;
+}
 nav a[type=button]:first-child span{
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
+
 }
 nav a[type=button]:first-child span::after{
   content: '\266B';
