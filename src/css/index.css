@@ -219,6 +219,12 @@ html.dark .marquee img.secondimage{
   #show-img {
     height: auto;
 }
+audio {
+  width: 90% !important;
+  bottom: 50% !important;
+
+}
+}
 #play {
   position: absolute;
   left: 50%;
