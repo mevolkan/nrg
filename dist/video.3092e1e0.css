@@ -674,12 +674,21 @@ img, video {
   padding-right: .75rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
 
 .pl-3 {
   padding-left: .75rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .text-center {
