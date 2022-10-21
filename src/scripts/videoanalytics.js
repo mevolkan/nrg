@@ -21,7 +21,8 @@
                 }
                 // current bucket hasn't been already sent to GA?, let's push it to GTM 
                 if (videos_status[e.target.id].greatest_marker && !videos_status[e.target.id]._progress_markers[videos_status[e.target.id].greatest_marker]) {
-                    videos_status[e.target.id]._progress_markers[videos_status[e.target.id].greatest_marker] = true; dataLayer.push({
+                    videos_status[e.target.id]._progress_markers[videos_status[e.target.id].greatest_marker] = true; 
+                    dataLayer.push({
                         'event': 'gaEvent',
                         'gaEventCategory': 'HTML5 Video',
                         'gaEventAction': 'Progress %' + videos_status[e.target.id].greatest_marker,
