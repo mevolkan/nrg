@@ -318,6 +318,10 @@ img, video {
   left: 50%;
 }
 
+.bottom-0 {
+  bottom: 0;
+}
+
 .z-20 {
   z-index: 20;
 }
@@ -670,6 +674,11 @@ img, video {
   padding-right: .75rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pr-4 {
   padding-right: 1rem;
 }
@@ -944,7 +953,6 @@ html.dark .marquee img.secondimage {
 
 #show-img {
   z-index: 45;
-  height: 50%;
   width: auto;
   margin-top: 100px;
 }

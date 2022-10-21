@@ -68,7 +68,7 @@ window.onload = function () {
         var barHeight
         var x = 0
         // set canvas color globally
-        ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+        ctx.fillStyle = '#000';
         function renderFrame() {
             requestAnimationFrame(renderFrame)
 
@@ -126,11 +126,11 @@ themeToggleBtn.addEventListener('click', function () {
         if (localStorage.getItem('color-theme') === 'light') {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
-            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         } else {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
-            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         }
 
         // if NOT set via local storage previously
@@ -138,11 +138,11 @@ themeToggleBtn.addEventListener('click', function () {
         if (document.documentElement.classList.contains('dark')) {
             document.documentElement.classList.remove('dark');
             localStorage.setItem('color-theme', 'light');
-            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         } else {
             document.documentElement.classList.add('dark');
             localStorage.setItem('color-theme', 'dark');
-            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         }
     }
 
