@@ -1,30 +1,39 @@
-//play audio
-const schedule = [
-    "./images/breakfast-club.png",
-    "./images/the-am-show.png",
-    "./images/nrg-transit.png",
-    "./images/the-circle.png",
-    "./images/default.png", 
-];
-let hour = new Date().getHours();
+//variables
+if (document.getElementById("audiopage")) //play audio
 window.onload = function() {
+    let hour = new Date().getHours();
+    const schedule = [
+        "./images/breakfast-club.png",
+        "./images/the-am-show.png",
+        "./images/nrg-transit.png",
+        "./images/the-circle.png",
+        "./images/default.png", 
+    ];
     var playBtn = document.getElementById("play");
     var audio = document.getElementById("audio");
     var showImg = document.getElementById("show-img");
-    if (hour >= 6 && hour < 10) showImg.src = schedule[0];
-    else if (hour >= 11 && hour < 14) showImg.src = schedule[1];
-    else if (hour >= 15 && hour < 19) showImg.src = schedule[2];
-    else if (hour >= 20 && hour <= 23) showImg.src = schedule[3];
-    else showImg.src = schedule[4];
+    // if (hour >= 6 && hour < 10) {
+    //     showImg.src = schedule[0]
+    // } else if (hour >= 11 && hour < 14) {
+    //     showImg.src = schedule[1]
+    // } else if (hour >= 15 && hour < 19) {
+    //     showImg.src = schedule[2]
+    // } else if (hour >= 20 && hour <= 23) {
+    //     showImg.src = schedule[3]
+    // } else {
+    //     showImg.src = schedule[4]
+    // }
     audio.crossOrigin = "anonymous";
+    audio.addEventListener("ended", ()=>{
+        playBtn.textContent = "▶️";
+        audioStatus.textContent = "Paused";
+    });
     playBtn.addEventListener("click", ()=>{
         audio.paused ? audio.play() : audio.pause();
         playBtn.textContent = audio.paused ? "Paused" : "Playing";
-    });
-    playBtn.onclick = ()=>{
         audio.src = "https://uksouth.streaming.broadcast.radio/nrg";
-        audio.load();
-        audio.play();
+        // audio.load()
+        // audio.play()
         var context = new AudioContext();
         var src = context.createMediaElementSource(audio);
         var analyser = context.createAnalyser();
@@ -42,11 +51,12 @@ window.onload = function() {
         var barWidth = WIDTH / bufferLength;
         var barHeight;
         var x = 0;
+        // set canvas color globally
+        ctx.fillStyle = "#000";
         function renderFrame() {
             requestAnimationFrame(renderFrame);
             x = 0;
             analyser.getByteFrequencyData(dataArray);
-            ctx.fillStyle = "#000";
             ctx.fillRect(0, 0, WIDTH, HEIGHT);
             for(var i = 0; i < bufferLength; i++){
                 barHeight = dataArray[i];
@@ -60,7 +70,7 @@ window.onload = function() {
         }
         audio.play();
         renderFrame();
-    };
+    });
 };
 //dark mode
 var themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
@@ -78,16 +88,20 @@ themeToggleBtn.addEventListener("click", function() {
         if (localStorage.getItem("color-theme") === "light") {
             document.documentElement.classList.add("dark");
             localStorage.setItem("color-theme", "dark");
+        // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         } else {
             document.documentElement.classList.remove("dark");
             localStorage.setItem("color-theme", "light");
+        // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
         }
     } else if (document.documentElement.classList.contains("dark")) {
         document.documentElement.classList.remove("dark");
         localStorage.setItem("color-theme", "light");
+    // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
     } else {
         document.documentElement.classList.add("dark");
         localStorage.setItem("color-theme", "dark");
+    // ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
     }
 });
 
