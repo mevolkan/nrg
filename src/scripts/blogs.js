@@ -1,6 +1,6 @@
 const spinner = document.getElementById("spinner");
 
-fetch('https://nrg.radio/wp-json/wp/v2/posts').then(function (response) {
+fetch('https://ke.nrg.radio/wp-json/wp/v2/posts').then(function (response) {
 	// The API call was successful!
 	if (response.ok) {
         return response.json();
