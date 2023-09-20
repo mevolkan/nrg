@@ -5,3 +5,5 @@ built with
     Spotify API
 
 npx parcel src/index.html
+https://wavesurfer-js.org/examples/?events.js
+https://wfplayer.js.org/
