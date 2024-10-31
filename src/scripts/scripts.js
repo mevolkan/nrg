@@ -16,17 +16,17 @@ window.onload = function () {
     var audio = document.getElementById('audio')
     var showImg = document.getElementById('show-img')
 
-    // if (hour >= 6 && hour < 10) {
-    //     showImg.src = schedule[0]
-    // } else if (hour >= 11 && hour < 14) {
-    //     showImg.src = schedule[1]
-    // } else if (hour >= 15 && hour < 19) {
-    //     showImg.src = schedule[2]
-    // } else if (hour >= 20 && hour <= 23) {
-    //     showImg.src = schedule[3]
-    // } else {
-    //     showImg.src = schedule[4]
-    // }
+    if (hour >= 6 && hour < 10) {
+        showImg.src = schedule[0]
+    } else if (hour >= 11 && hour < 14) {
+        showImg.src = schedule[1]
+    } else if (hour >= 15 && hour < 19) {
+        showImg.src = schedule[2]
+    } else if (hour >= 20 && hour <= 23) {
+        showImg.src = schedule[3]
+    } else {
+        showImg.src = schedule[4]
+    }
 
     audio.crossOrigin = 'anonymous'
 
